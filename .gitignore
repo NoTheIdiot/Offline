@@ -2,3 +2,4 @@ websites/osdev_wiki
 videos/*
 !videos/.gitkeep
 websites/python_docs
+websites/js_docs
