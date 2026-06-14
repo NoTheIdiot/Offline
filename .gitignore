@@ -1,1 +1,3 @@
-websites/osdev_wiki/
+websites/osdev_wiki
+videos/*
+!videos/.gitkeep

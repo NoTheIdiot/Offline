@@ -1,12 +1,19 @@
 @echo off
-title Localhost Gateway Boot Engine
+setlocal enabledelayedexpansion
+cls
 
-start /min "" cmd /c "cd /d D:\offline\websites\osdev_wiki && python -m http.server 8080 --bind 127.0.0.1"
+set count=0
+for %%f in (*.mp4) do (
+    set /a count+=1
+    set "video[!count!]=%%f"
+    <nul set /p="[!count!] %%f"
+    cd.
+)
 
-timeout /t 2 >nul
+if %count%==0 exit
 
-start "" "D:\offline\main.html"
+set /p choice=""
 
-echo started success.
-timeout /t 1 >nul
-exit
+if not defined video[%choice%] exit
+
+start "" "!video[%choice%]!"

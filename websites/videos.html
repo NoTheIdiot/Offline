@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Offline Internet: Videos</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../others/style.css" />
+        <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: monospace; /* Monospaced terminal font */
+            padding: 30px;
+            margin: 0;
+        }
+        h2 { color: #444444; font-size: 1.2rem; margin-bottom: 20px; }
+        
+        .scan-btn {
+            background: #262626;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            font-family: monospace;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .scan-btn:hover { background: #4f4f4f; }
+
+        /* Clean text list container layout */
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 800px;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <h1>Videos (Localhost, again.)</h1>
+        <a href="file:///D:/offline/videos/" class="scan-btn" id="openDirBtn">open video dir</a>
+        
+        <div class="video-list" id="listContainer">
+            <!-- Handed off natively to Windows File Explorer -->
+        </div>
+
+        <script>
+            // This script helps normalize the relative paths across local drives dynamically
+            document.getElementById('openDirBtn').addEventListener('click', function(e) {
+                // If you are browsing locally, this lets the native shell handle the folder jump smoothly
+                console.log("Routing file protocol to native explorer view loop...");
+            });
+        </script>
+    </body>
+</html>
